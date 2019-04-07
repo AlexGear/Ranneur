@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2991188548825242259}
   - component: {fileID: 2991188548825242258}
+  - component: {fileID: 928457243}
   m_Layer: 0
   m_Name: CarSpawner
   m_TagString: Untagged
@@ -45,6 +46,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 636577307917594318, guid: 7d196a827a402a64490aae66f0174e16,
     type: 3}
+  lanes: 0000000001000000
+  direction: 1
+  allowDoubleSpawn: 0
+  spawnY: 0.28
+  spawnIntervalMin: 0.25
+  spawnIntervalMax: 0.6
+  spawnDistance: 150
+  noVanishDistance: 10
+--- !u!114 &928457243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991188548825242256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2235d962b2269534c891cc800351563f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefab: {fileID: 636577307917594318, guid: 7d196a827a402a64490aae66f0174e16,
+    type: 3}
+  lanes: 0200000003000000
+  direction: 0
+  allowDoubleSpawn: 1
   spawnY: 0.28
   spawnIntervalMin: 0.5
   spawnIntervalMax: 1

@@ -554,7 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLane: 2
   swipeCentimeters: 2
-  laneChangeManeuverTime: 0.3
+  laneChangeManeuverTime: 0.25
   currentSpeed: 30
   acceleration: 0.1
 --- !u!54 &1654569944

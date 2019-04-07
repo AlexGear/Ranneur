@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
+    private enum Direction { ToSun, ToNihility }
+
     [SerializeField] private GameObject carPrefab;
+    [SerializeField] private int[] lanes = new int[0];
+    [SerializeField] private Direction direction;
+    [SerializeField] private bool allowDoubleSpawn = false;
     [SerializeField] private float spawnY = 0.28f;
     [SerializeField] private float spawnIntervalMin;
     [SerializeField] private float spawnIntervalMax;
@@ -35,9 +40,33 @@ public class CarSpawner : MonoBehaviour
 
     private void SpawnCar()
     {
-        int lane = Random.Range(0, 4);
-        Vector3 position = new Vector3(LaneManager.GetX(lane), spawnY, player.distance + spawnDistance);
-        Quaternion rotation = (lane < 2) ? Quaternion.Euler(new Vector3(0, 180, 0)) : Quaternion.identity;
+        int lane = GetRandomLane();
+        SpawnCar(lane);
+        if (lanes.Length > 1 && allowDoubleSpawn && Random.value < 0.15f)
+        {
+            int otherLane = GetRandomLaneExcept(lane);
+            SpawnCar(otherLane);
+        }
+    }
+
+    private int GetRandomLane() => lanes[Random.Range(0, lanes.Length)];
+
+    private int GetRandomLaneExcept(int lane)
+    {
+        int otherLane;
+        do
+            otherLane = GetRandomLane();
+        while (otherLane == lane);
+        return otherLane;
+    }
+
+    private void SpawnCar(int lane)
+    {
+        float z = player.distance + spawnDistance + Random.Range(-2, 2);
+        Vector3 position = new Vector3(LaneManager.GetX(lane), spawnY, z);
+        Quaternion rotation = direction == Direction.ToNihility
+                                ? Quaternion.Euler(new Vector3(0, 180, 0))
+                                : Quaternion.identity;
         Car car = TakeCar();
         car.transform.position = position;
         car.transform.rotation = rotation;
