@@ -48,5 +48,5 @@ MonoBehaviour:
   spawnY: 0.28
   spawnIntervalMin: 0.5
   spawnIntervalMax: 1
-  spawnDistance: 50
+  spawnDistance: 150
   noVanishDistance: 10
