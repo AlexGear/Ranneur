@@ -43,11 +43,12 @@ public class Road : MonoBehaviour
     private void RearrangeParts()
     {
         GameObject firstPart = roadParts.First.Value;
-        if (firstPart.transform.position.z + noVanishDistance < player.distance)
+        while (firstPart.transform.position.z + noVanishDistance < player.distance)
         {
             MovePartAtEnd(firstPart);
             roadParts.AddLast(firstPart);
             roadParts.RemoveFirst();
+            firstPart = roadParts.First.Value;
         }
     }
 
