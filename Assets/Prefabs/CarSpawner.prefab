@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 636577307917594318, guid: 7d196a827a402a64490aae66f0174e16,
     type: 3}
-  spawnIntervalSeconds: 1
+  spawnY: 0.28
+  spawnIntervalMin: 0.5
+  spawnIntervalMax: 1
   spawnDistance: 50
   noVanishDistance: 10

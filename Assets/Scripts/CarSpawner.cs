@@ -6,11 +6,12 @@ public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject carPrefab;
     [SerializeField] private float spawnY = 0.28f;
-    [SerializeField] private float spawnIntervalSeconds;
+    [SerializeField] private float spawnIntervalMin;
+    [SerializeField] private float spawnIntervalMax;
     [SerializeField] private float spawnDistance;
     [SerializeField] private float noVanishDistance;
 
-    private float lastSpawnTime;
+    private float spawnTimer;
 
     private PlayerController player;
     private List<Car> activeCars = new List<Car>();
@@ -25,10 +26,10 @@ public class CarSpawner : MonoBehaviour
     {
         DisableGoneCars();
 
-        float currentTime = Time.time;
-        if (currentTime - lastSpawnTime > spawnIntervalSeconds) {
+        spawnTimer -= Time.fixedDeltaTime;
+        if (spawnTimer <= 0) {
             SpawnCar();
-            lastSpawnTime = currentTime;
+            spawnTimer = Random.Range(spawnIntervalMin, spawnIntervalMax);
         }
     }
 
