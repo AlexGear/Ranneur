@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject carPrefab;
+    [SerializeField] private float spawnY = 0.28f;
     [SerializeField] private float spawnIntervalSeconds;
     [SerializeField] private float spawnDistance;
     [SerializeField] private float noVanishDistance;
@@ -22,7 +23,7 @@ public class CarSpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        DisableCars();
+        DisableGoneCars();
 
         float currentTime = Time.time;
         if (currentTime - lastSpawnTime > spawnIntervalSeconds) {
@@ -31,42 +32,48 @@ public class CarSpawner : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void SpawnCar()
     {
         int lane = Random.Range(0, 4);
-        Vector3 position = new Vector3(LaneManager.GetX(lane), 0, player.distance + spawnDistance);
-        Quaternion rotation = (lane < 2) ? Quaternion.Euler(new Vector3(0, 180, 0)) : Quaternion.Euler(Vector3.zero);
+        Vector3 position = new Vector3(LaneManager.GetX(lane), spawnY, player.distance + spawnDistance);
+        Quaternion rotation = (lane < 2) ? Quaternion.Euler(new Vector3(0, 180, 0)) : Quaternion.identity;
+        Car car = TakeCar();
+        car.transform.position = position;
+        car.transform.rotation = rotation;
+    }
 
+    private Car TakeCar()
+    {
         Car car;
         if (disabledCars.Count == 0)
         {
             car = Instantiate(carPrefab, transform).GetComponent<Car>();
-        } else
+        }
+        else
         {
             car = disabledCars[0];
             car.gameObject.SetActive(true);
             disabledCars.Remove(car);
         }
-
         activeCars.Add(car);
-        car.transform.position = position;
-        car.transform.rotation = rotation;
+        return car;
     }
 
-    private void DisableCars()
+    private void DisableGoneCars()
     {
+        var removeList = new List<Car>();
         foreach (Car car in activeCars)
         {
             if (car.transform.position.z + noVanishDistance < player.distance)
             {
                 car.gameObject.SetActive(false);
                 disabledCars.Add(car);
+                removeList.Add(car);
             }
+        }
+        foreach (Car car in removeList)
+        {
+            activeCars.Remove(car);
         }
     }
 }
