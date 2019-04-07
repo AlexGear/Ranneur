@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -108,6 +107,26 @@ public class PlayerController : MonoBehaviour
         else
         {
             if (currentLane > LaneManager.minLane) currentLane--;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isAlive)
+            return;
+
+        isAlive = false;
+        rb.isKinematic = false;
+        rb.velocity = (Random.onUnitSphere + new Vector3(0, 1, 1)) * currentSpeed;
+        rb.angularVelocity = Random.onUnitSphere * 180;
+
+        var otherRb = other.GetComponent<Rigidbody>();
+        if (otherRb != null)
+        {
+            other.isTrigger = false;
+            otherRb.isKinematic = false;
+            otherRb.velocity = (Random.onUnitSphere + new Vector3(0, 1, 1)) * currentSpeed;
+            otherRb.angularVelocity = Random.onUnitSphere * 180;
         }
     }
 }
