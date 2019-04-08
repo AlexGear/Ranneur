@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float acceleration = 0.1f;
 
     public float distance => transform.position.z;
+    public bool isAlive { get; private set; }
 
     private Rigidbody rb;
-    private bool isAlive;
 
     private float xSmoothDampVel;
 
