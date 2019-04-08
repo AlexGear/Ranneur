@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.45114905, g: 0.49976462, b: 0.567664, a: 1}
+  m_IndirectSpecularColor: {r: 0.451149, g: 0.49976462, b: 0.5676637, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -958,7 +958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &521103453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -975,7 +975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -180.29999}
+  m_AnchoredPosition: {x: 0, y: -292}
   m_SizeDelta: {x: 759.4, y: 284.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &521103454
@@ -1011,7 +1011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOU DIED
+  m_Text: WASTED
 --- !u!222 &521103455
 CanvasRenderer:
   m_ObjectHideFlags: 0
