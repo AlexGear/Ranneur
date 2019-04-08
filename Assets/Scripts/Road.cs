@@ -15,7 +15,8 @@ public class Road : MonoBehaviour
 
     private void Awake()
     {
-        roadPartLength = roadPartPrefab.GetComponent<MeshFilter>().sharedMesh.bounds.size.z * roadPartPrefab.transform.localScale.z;
+        MeshRenderer renderer = roadPartPrefab.GetComponentInChildren<MeshRenderer>();
+        roadPartLength = renderer.bounds.size.z;
         FirstBuild();
         player = FindObjectOfType<PlayerController>();
     }

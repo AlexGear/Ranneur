@@ -6,8 +6,15 @@ public class Car : MonoBehaviour
 {
     [SerializeField] public float speed = 10;
 
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * speed * Time.fixedDeltaTime);
+        rb.position += transform.forward * speed * Time.fixedDeltaTime;
     }
 }
