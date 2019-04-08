@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public float distance => transform.position.z;
     public bool isAlive { get; private set; }
+    public int coins { get; private set; }
 
     private Rigidbody rb;
 
@@ -115,6 +116,17 @@ public class PlayerController : MonoBehaviour
         if (!isAlive)
             return;
 
+        if(other.CompareTag("Obstacle"))
+        {
+            OnHitObstacle(other);
+        }
+        if(other.CompareTag("Coin"))
+        {
+            OnHitCoin(other);
+        }
+    }
+    private void OnHitObstacle(Collider other)
+    {
         isAlive = false;
         rb.isKinematic = false;
         rb.velocity = (Random.onUnitSphere + new Vector3(0, 1, 1)) * currentSpeed;
@@ -129,4 +141,11 @@ public class PlayerController : MonoBehaviour
             otherRb.angularVelocity = Random.onUnitSphere * 180;
         }
     }
+
+    private void OnHitCoin(Collider other)
+    {
+        other.gameObject.SetActive(false);
+        coins++;
+    }
+
 }

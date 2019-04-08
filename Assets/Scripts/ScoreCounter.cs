@@ -19,7 +19,9 @@ public class ScoreCounter : MonoBehaviour
     {
         if (player.isAlive)
         {
-            int score = (int)player.distance;// / CONSTANT;
+            int distance = (int)player.distance;
+            int coins = player.coins;
+            int score = distance + coins * 100;
             scoreText.text = score.ToString();
         }
     }

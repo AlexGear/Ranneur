@@ -44,16 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2235d962b2269534c891cc800351563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPrefab: {fileID: 636577307917594318, guid: 7d196a827a402a64490aae66f0174e16,
-    type: 3}
-  lanes: 0000000001000000
-  direction: 1
-  allowDoubleSpawn: 0
+  prefab: {fileID: 636577307917594318, guid: 7d196a827a402a64490aae66f0174e16, type: 3}
   spawnY: 0.28
   spawnIntervalMin: 0.6
   spawnIntervalMax: 0.8
   spawnDistance: 150
   noVanishDistance: 10
+  lanes: 0000000001000000
+  direction: 1
+  allowDoubleSpawn: 0
 --- !u!114 &928457243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,13 +65,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2235d962b2269534c891cc800351563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPrefab: {fileID: 636577307917594318, guid: 7d196a827a402a64490aae66f0174e16,
-    type: 3}
-  lanes: 0200000003000000
-  direction: 0
-  allowDoubleSpawn: 1
+  prefab: {fileID: 636577307917594318, guid: 7d196a827a402a64490aae66f0174e16, type: 3}
   spawnY: 0.28
   spawnIntervalMin: 0.8
   spawnIntervalMax: 1.4
   spawnDistance: 150
   noVanishDistance: 10
+  lanes: 0200000003000000
+  direction: 0
+  allowDoubleSpawn: 1
