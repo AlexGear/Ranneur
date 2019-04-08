@@ -50,8 +50,8 @@ MonoBehaviour:
   direction: 1
   allowDoubleSpawn: 0
   spawnY: 0.28
-  spawnIntervalMin: 0.25
-  spawnIntervalMax: 0.6
+  spawnIntervalMin: 0.6
+  spawnIntervalMax: 0.8
   spawnDistance: 150
   noVanishDistance: 10
 --- !u!114 &928457243
@@ -72,7 +72,7 @@ MonoBehaviour:
   direction: 0
   allowDoubleSpawn: 1
   spawnY: 0.28
-  spawnIntervalMin: 0.5
-  spawnIntervalMax: 1
+  spawnIntervalMin: 0.8
+  spawnIntervalMax: 1.4
   spawnDistance: 150
   noVanishDistance: 10

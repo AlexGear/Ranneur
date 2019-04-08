@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.451149, g: 0.49976462, b: 0.5676637, a: 1}
+  m_IndirectSpecularColor: {r: 0.45114905, g: 0.49976462, b: 0.567664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -248,7 +248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RETURN
+  m_Text: CONTINUE
 --- !u!222 &63763990
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -616,10 +616,10 @@ RectTransform:
   m_Father: {fileID: 343855380}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -6.8, y: 1377.2}
-  m_SizeDelta: {x: 262.1, y: 90.1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 425.09998, y: -60}
+  m_SizeDelta: {x: 262.1, y: 90.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259188795
 MonoBehaviour:
@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 420207485}
   - component: {fileID: 420207484}
   m_Layer: 5
-  m_Name: ButtonReturn
+  m_Name: ButtonContinue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1429,10 +1429,10 @@ RectTransform:
   m_Father: {fileID: 343855380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -268.9, y: 1377.2}
-  m_SizeDelta: {x: 262.1, y: 90.1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 163, y: -60}
+  m_SizeDelta: {x: 262.1, y: 90.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &917411491
 MonoBehaviour:
@@ -1461,7 +1461,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1537,7 +1537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1394069538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLane: 2
-  swipeCentimeters: 2
+  swipeCentimeters: 1
   laneChangeManeuverTime: 0.25
   currentSpeed: 30
   acceleration: 0.1
@@ -1763,10 +1763,10 @@ RectTransform:
   m_Father: {fileID: 343855380}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 327, y: 662.4}
-  m_SizeDelta: {x: 96.5, y: 82.718}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -58.5, y: -60}
+  m_SizeDelta: {x: 72.3, y: 78.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998433294
 MonoBehaviour:
@@ -1809,7 +1809,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2056841481}
-        m_MethodName: setActivePanel
+        m_MethodName: SetActivePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
