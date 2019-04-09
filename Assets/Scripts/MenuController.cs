@@ -16,7 +16,6 @@ public class MenuController : MonoBehaviour
     {
         track = music.GetComponent<AudioSource>();
         laugh = sound.GetComponent<AudioSource>();
-        setMusicVolume(0.1f);
         DontDestroyOnLoad(music);
         DontDestroyOnLoad(laugh);
     }
